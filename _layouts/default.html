@@ -37,12 +37,18 @@
 </head>
 
 <body>
+<!-- block adv from qip hosting -->
+<script type="text/javascript">
+	secretwrite = document.write;
+	document.write = function(){};
+</script>
 <div class="wrapper">
     {% include header.html %}
 
     <section id="main">
         <article class="container">
           <h1 class="hero">{{page.title}}</h1>
+          <span class="post-date">{{ page.date | date: "%b %e %Y" }}</span>
           {{ content }}
         </article>
     </section>

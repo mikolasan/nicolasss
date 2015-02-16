@@ -1,4 +1,12 @@
-pygments: true
-permalink: /post/:title
+# Handling Reading
 exclude: ['Gemfile','Gemfile.lock','Rakefile','.git']
+
+# Conversion
+highlighter: pygments
+excerpt_separator: <!--more-->
+
+# Outputting
+permalink: /post/:title
 paginate: 4
+
+

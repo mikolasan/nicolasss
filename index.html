@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: Страница приветствия
 ---
 
 <div class="posts">
@@ -12,7 +12,8 @@ title: Home
         </a>
       </h1>
       <span class="post-date">{{ post.date | date: "%b %e %Y" }}</span>
-      {{ post.content }}
+      {{ post.excerpt }}
+      <a href="{{ post.url }}">Читать далее</a>
     </div>
 
   {% endfor %}
@@ -21,8 +22,6 @@ title: Home
 <div class="pagination">
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
@@ -30,8 +29,6 @@ title: Home
     {% else %}
       <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
     {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
 

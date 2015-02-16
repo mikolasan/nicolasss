@@ -1,0 +1,77 @@
+---
+layout: post
+title: Raspberry для гостиной
+---
+
+## К сведению
+
+**К сведению тех, кто поставил raspbian:** он не содержит медиа кодеков. Поэтому если малинка нужна для фильмов или музыки, то нужно будет ставить еще пакеты или сразу скачивать raspbmc.
+
+**К сведению тех, кто поставил raspbmc:** бывает, что в простое он загружает процессор на 90%. Может, ну его, эти иксы?
+
+<!--more-->
+
+**К сведению тех, кто еще ничего не ставил, но хочет просто подрубить колонки к малинке.** Блин, да. Аудио вытащить с помощью обычных колонок и обычных проводов не получится. Есть вероятность, что необходимый переходник не нужно покупать дополнительно. Речь идет о 4-pole 3.5mm jack <-> 3 RCA (красный и белый "тюльпаны" должны непринужденно суваться в телеки, аудиосистемы и приличные колонки > 10 ватт). Вероятно, что можно найти такой переходник где-то в кладовке или в тумбочке. Редко, когда провода лежат у вас прямо на рабочем столе, а вот кладовки тают массу сюрпризов, если туда заглядвать раз в 10 лет. Искомый переходник я одолжил у арсенала видеокамеры.
+Не стоит сувать 3-pole джек в малинку т.к. видео канал и общий соединятся. Говорят, что это дело неприятно шумит \[[1]\].
+
+## Ставим Коди
+
+Да кто в последнее время может радоваться стоковым сборкам? Сперва необходимо будет пробежаться по [единственному мануалу о Коди, который стоит того, чтобы прочесть][настройка коди]
+
+## Меряем температуру
+
+Надо отметить один факт касательного женского пола. Они моют полы. Они вытирают пыль на столе. Моют мышку... и под мышкой. Может даже корпус протирают, но внутри корпуса - никогда.
+
+
+Нужно определить какие видео плата сможет тянуть без дополнительного охлаждения
+<http://www.bit-tech.net/news/hardware/2013/05/01/water-cooled-raspberry-pi-computer-complete/1>
+(обычно смотрим на 2 гига видео, т.е даже не 720р, но следует знать: если я скачаю 720р или 1080р - потянет ли система?)
+Будем измерять температуру.
+
+На плате можно ручками потренироваться. Скрипт будет такой
+
+{% highlight bash %}
+#!/bin/bash
+cpuTemp0=$(cat /sys/class/thermal/thermal_zone0/temp)
+cpuTemp1=$(($cpuTemp0/1000))
+cpuTemp2=$(($cpuTemp0/100))
+cpuTempM=$(($cpuTemp2 % $cpuTemp1))
+
+gpuTemp0=$(/opt/vc/bin/vcgencmd measure_temp)
+gpuTemp0=${gpuTemp0//\'/?}
+gpuTemp0=${gpuTemp0//temp=/}
+
+echo CPU Temp: $cpuTemp1"."$cpuTempM"?C"
+echo GPU Temp: $gpuTemp0
+{% endhighlight %}
+
+А если хотим в автоматическом режиме и с графиками, то читаем
+<http://youresuchageek.blogspot.ru/2013/01/howto-raspberry-pi-monitor-your.html>
+
+Ознакомимся с SNMP http://habrahabr.ru/post/196308/
+
+При установке Observium на 14.04 пакеты `mysql-server` и `mysql-client` не захотели устанавливаться
+в силу странного бага <https://bugs.launchpad.net/ubuntu/+bug/987182>. Надо было просто сделать `sudo apt-get update`. А когда эти пакеты таки установились, они не стали вести себя хорошо, а потребовали локалхост определить по особому
+
+{% highlight bash %}
+sudo mysql -u root -p -h127.0.0.1
+{% endhighlight %}
+
+[] http://stackoverflow.com/questions/10299148/mysql-error-1045-28000-access-denied-for-user-billlocalhost-using-passw
+set up avahi / zeroconf
+[] http://elinux.org/RPi_Advanced_Setup
+[] http://www.howtogeek.com/167190/how-and-why-to-assign-the-.local-domain-to-your-raspberry-pi/
+http://www.tux.in.ua/articles/2984
+Require all granted
+[] https://toster.ru/q/69538
+ http://www.cyberciti.biz/nixcraft/linux/docs/uniqlinuxfeatures/mrtg/mrtg_config_step_3.php
+ http://www.raspberrypi.org/forums/viewtopic.php?f=29&t=24237
+ http://andy.od.ua/news_48.html
+ http://www.bobgo.ru/%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B8-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-snmp-%D0%BD%D0%B0-ubuntu/
+http://elinux.org/RPi_VNC_Server
+
+
+
+
+[1]: http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-model-b-3-5mm-audiovideo-jack/
+[настройка коди] : http://mymediaexperience.com/raspberry-pi-xbmc-with-raspbmc/
