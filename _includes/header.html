@@ -1,45 +1,22 @@
 <header>
     <div class="container">
-        <div class="profile">
-            <div class="social">
-                <a href="http://twitter.com/tybenz">
-                    <div data-picture data-alt="Twitter">
-                        <div data-src="/exemplar/img/twitter16.png"></div>
-                        <div data-src="/exemplar/img/twitter32.png"     data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
-                        <noscript><img src="/exemplar/img/twitter16.png" alt="Twitter"></noscript>
-                    </div>
-                </a>
-                <a href="http://github.com/tybenz">
-                    <div data-picture data-alt="Github">
-                        <div data-src="/exemplar/img/octocat16.png"></div>
-                        <div data-src="/exemplar/img/octocat32.png"     data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
-                        <noscript><img src="/exemplar/img/octocat16.png" alt="Github"></noscript>
-                    </div>
-                </a>
-            </div>
-            <div class="avatar" data-picture data-alt="avatar">
-                <div data-src="{% include avatar_url %}?s=54"></div>
-                <div data-src="{% include avatar_url %}?s=108" data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
-                <noscript><img src="{% include avatar_url %}?s=54" alt="avatar"></noscript>
-            </div>
-        </div>
-        <h5 class="logo"><a href="http://tybenz.com">Tyler Benziger</a></h5>
+        <h5 class="logo"><a href="http://nicolasss.pisem.net">Nicolasss.pisem.net</a></h5>
         <nav class="main">
             <ul>
-                {% if page.nav == "blog" %}
-                    <li><a href="http://tybenz.com" class="active">Blog</a></li>
+                {% if page.nav == "main" %}
+                    <li><a href="/" class="active">Главная</a></li>
                 {% else %}
-                    <li><a href="http://tybenz.com">Blog</a></li>
+                    <li><a href="/">Главная</a></li>
                 {% endif %}
-                {% if page.nav == "about" %}
-                <li><a href="http://tybenz.com/about" class="active">About</a></li>
+                {% if page.nav == "diy" %}
+                    <li><a href="/diy" class="active">DIY</a></li>
                 {% else %}
-                <li><a href="http://tybenz.com/about">About</a></li>
+                    <li><a href="/diy">DIY</a></li>
                 {% endif %}
-                {% if page.nav == "projects" %}
-                <li><a href="http://tybenz.com/projects" class="active">Projects</a></li>
+                {% if page.nav == "private" %}
+                    <li><a href="/private" class="active">Блог</a></li>
                 {% else %}
-                <li><a href="http://tybenz.com/projects">Projects</a></li>
+                    <li><a href="/private">Блог</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -51,20 +28,10 @@
         </div>
         <nav class="subnav">
             <ul>
-                {% if page.subnav == "exemplar-home" %}
-                  <li><a href="/exemplar" class="active" data-subnav="exemplar-home">Home</a></li>
+                {% if page.subnav == "about" %}
+                    <li><a href="/about" class="active">Автор</a></li>
                 {% else %}
-                    <li><a href="/exemplar" data-subnav="exemplar-home">Home</a></li>
-                {% endif %}
-                {% if page.subnav == "exemplar-docs" %}
-                    <li><a href="/exemplar/docs" class="active" data-subnav="exemplar-docs">Docs</a></li>
-                {% else %}
-                    <li><a href="/exemplar/docs" data-subnav="exemplar-docs">Docs</a></li>
-                {% endif %}
-                {% if page.subnav == "download" %}
-                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip" class="active" data-subnav="download">Download</a></li>
-                {% else %}
-                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip" data-subnav="download">Download</a></li>
+                    <li><a href="/about">Автор</a></li>
                 {% endif %}
             </ul>
         </nav>

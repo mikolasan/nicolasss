@@ -1,6 +1,6 @@
-#Exemplar
+#Nicolasss
 
-This is my jekyll site template. Used for blog and project pages.
+This is jekyll site template. Used for my blog. Based on [Exemplar](https://github.com/tybenz/exemplar)
 
 #Getting Started
 
@@ -29,4 +29,3 @@ In order to update the Bourbon folder:
     bourbon update
     
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tybenz/exemplar/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
