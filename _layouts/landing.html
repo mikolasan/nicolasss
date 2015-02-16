@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <link rel="stylesheet" type="text/css" href="css/nau.css" />
+  <link rel="stylesheet" type="text/css" href="css/pagepiling.css" />
+  <link rel="stylesheet" type="text/css" href="css/pagepiling.custom.css" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.pagepiling.js"></script>
+  <script type="text/javascript" src="js/jquery.hoverIntent.minified.js"></script>
+  <script type="text/javascript" src="js/custom_scripts.js"></script>
+  
+  <body>
+
+    <div class="header-container">
+    <div class="header">
+    <div class="header-left">
+      <div class="main-menu menu-item expandable">
+        <a href="#" class="trigger"><span class="icon icon-nau-menu"></span><span>Menu</span></a>
+        <div class="drop-down">
+          <div class="nav-container">
+            <ul id="nav">
+            
+            <li class="level0 level-top nav-1 first"><a title="" href="#diy" class="level-top">DIY</a>
+            <div class="drop-down">
+              <ul class="drop-down-content">
+              <li class="discover nav-1 first">
+                <a href="#" class="headline">Последние статьи</a>
+                <div class="content">
+                  {% for post in site.categories.diy %}
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                      <p>{{ post.excerpt }}</p>
+                  {% endfor %}
+                </div>
+              
+              </li>
+              </ul>
+            </div>
+            </li>
+            
+            
+            <li class="level0 level-top nav-2"><a title="" href="#science" class="level-top ">Neuron.conf</a>
+            <div class="drop-down">
+              <ul class="drop-down-content">
+              <li class="discover nav-1 first">
+                <a href="#" class="headline">Последние статьи</a>
+                <div class="content">
+                  {% for post in site.categories.science %}
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                      <p>{{ post.excerpt }}</p>
+                  {% endfor %}
+                </div>
+              </li>
+              </ul>
+            </div>
+            </li>
+            
+            
+            </ul>
+          </div>
+        </div>
+      </div>        
+    </div>
+    </div>
+    </div>
+    
+    <div id="pagepiling">
+      <div class="section" id="section-diy">
+        <div class="intro">
+	      	<h1>Как не заскучать в сером Новосибирске</h1>
+	      	<p>О железяках, микроконтроллерах, diy</p>
+	      	<a href="diy/"><img src="img/dive.png" alt="Далее"></a>
+	    </div>
+	  </div>
+      <div class="section" id="section-science">
+        <div class="intro">
+	      	<h1>Наука как хобби. Анализ данных</h1>
+	      	<p>разработка сайта neuron.co.nf</p>
+	      	<a href="science/"><img src="img/dive.png" alt="Далее"></a>
+	    </div>
+	  </div>
+      <div class="section" id="section-odds">
+        <div class="intro">
+	      	<h1>Комбинаторика слотов</h1>
+	      	<p>разная математика для разработки азартных аппаратов</p>
+	      	<a href="odds/"><img src="img/dive.png" alt="Далее"></a>
+	    </div>
+	  </div>
+	  <div class="section" id="section-design">
+        <div class="intro">
+	      	<h1>Дизайн</h1>
+	      	<a href="design/"><img src="img/dive.png" alt="Далее"></a>
+	    </div>
+	  </div>
+	  <div class="section" id="section-private">
+        <div class="intro">
+	      	<h1>Неописуемая фигня</h1>
+	      	<a href="private/"><img src="img/dive.png" alt="Далее"></a>
+	    </div>
+	  </div>
+    </div>
+
+  </body>
+
+</html>
