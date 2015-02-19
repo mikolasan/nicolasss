@@ -140,12 +140,17 @@ header .nav-selection.about {
     left: 49px;
 }
 
-header .nav-selection.blog {
-    width: 33px;
+header .nav-selection.main {
+    width: 60px;
     left: 0;
 }
 
-header .nav-selection.projects {
+header .nav-selection.diy {
+    width: 45px;
+    left: 65px;
+}
+
+header .nav-selection.private {
     width: 60px;
     left: 107px;
 }
@@ -154,20 +159,10 @@ header .subnav-selection {
   position: absolute;
   height: 10px;
   background-color: $black;
-  width: 50px;
+  width: 0px;
 }
 
-header .subnav-selection.exemplar-home {
-  right: 140px;
-  width: 42px;
-}
-
-header .subnav-selection.exemplar-docs {
-  right: 87px;
-  width: 35px;
-}
-
-header .subnav-selection.download {
+header .subnav-selection.about {
   right: 0;
   width: 69px;
 }

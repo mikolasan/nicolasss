@@ -6,7 +6,7 @@ highlighter: pygments
 excerpt_separator: <!--more-->
 
 # Outputting
-permalink: /post/:title
+permalink: /:categories/:title
 paginate: 4
 
 

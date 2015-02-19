@@ -1,5 +1,6 @@
 ---
 layout: post
+category: diy
 title: Начинаем собирать материалы по Raspberry Pi
 ---
 

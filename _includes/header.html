@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <h5 class="logo"><a href="http://nicolasss.pisem.net">Nicolasss.pisem.net</a></h5>
+        <h5 class="logo"><a href="/">Nicolasss.pisem.net</a></h5>
         <nav class="main">
             <ul>
                 {% if page.nav == "main" %}
@@ -24,11 +24,11 @@
             <div class="nav-selection {{ page.nav }}"></div>
         </div>
         <div class="subnav-slider">
-            <div class="subnav-selection {{ page.subnav }}"></div>
+            <div class="subnav-selection {{ page.nav }}"></div>
         </div>
         <nav class="subnav">
             <ul>
-                {% if page.subnav == "about" %}
+                {% if page.nav == "about" %}
                     <li><a href="/about" class="active">Автор</a></li>
                 {% else %}
                     <li><a href="/about">Автор</a></li>
