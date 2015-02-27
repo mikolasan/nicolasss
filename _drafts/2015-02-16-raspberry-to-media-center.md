@@ -126,4 +126,4 @@ title: Raspberry для гостиной
 
 
 [1]: http://www.raspberrypi-spy.co.uk/2014/07/raspberry-pi-model-b-3-5mm-audiovideo-jack/
-[настройка коди] : http://mymediaexperience.com/raspberry-pi-xbmc-with-raspbmc/
+[настройка коди]: http://mymediaexperience.com/raspberry-pi-xbmc-with-raspbmc/
