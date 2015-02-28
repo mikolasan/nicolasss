@@ -2,8 +2,8 @@
 #
 #
 
-FROM="utf-8"
-TO="win"
+FROM="_site"
+TO="_site_win"
 
 if [ -d "$FROM" ]; then
     # prepare hierarhy
