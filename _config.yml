@@ -1,4 +1,9 @@
 title: Nicolas Neupokoev
+url: "http://nicolas.zz.mu"
+twitter_username: stakanmartini
+github_username:  mikolasan
+#source: _source
+destination: _site
 
 # Handling Reading
 exclude: ['Gemfile','Gemfile.lock','Rakefile','.git']

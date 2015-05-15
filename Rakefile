@@ -16,13 +16,13 @@ task :generate do
     set -e
     jekyll serve;
     sass --update _sass:_site/css -f -r ./_sass/bourbon/lib/bourbon.rb;
-    git checkout gh-pages;
+    git checkout nicolas;
     cp -r _site/* .;
     rm -Rf _site;
     rm -Rf .sass-cache;
     rm -Rf _cache;
     git add .;
-    git commit -m "updating gh-pages";
+    git commit -m "updating build";
     git checkout master;
   CMD
 end # task :generate
@@ -33,7 +33,7 @@ desc "Watch the site and regenerate when it changes"
 task :watch do
   puts "Starting to watch source with Jekyll and Sass..."
   system "sass --update _sass:css -f -l -r ./_sass/bourbon/lib/bourbon.rb"
-  jekyllPid = Process.spawn("jekyll --auto --server")
+  jekyllPid = Process.spawn("jekyll serve --watch")
   sassPid = Process.spawn("sass --watch _sass:css -l -r ./_sass/bourbon/lib/bourbon.rb")
 
   trap("INT") {
@@ -44,11 +44,11 @@ task :watch do
   [jekyllPid, sassPid].each { |pid| Process.wait(pid) }
 end # task :watch
 
-desc "Publish gh-pages to the appropriate repo/branch"
+desc "Publish site to the appropriate repo/branch"
 task :publish do
   exec(<<-CMD)
     set -e
-    git push origin gh-pages:gh-pages
+    git push origin nicolas:nicolas
   CMD
 end
 
