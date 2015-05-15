@@ -1,6 +1,6 @@
 #Nicolasss
 
-This is jekyll site template. Used for my blog. Based on [Exemplar](https://github.com/tybenz/exemplar)
+This is jekyll site template. Used for [my blog](http://nicolas.zz.mu). Based on [Exemplar](https://github.com/tybenz/exemplar)
 
 #Getting Started
 
