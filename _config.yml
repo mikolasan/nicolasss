@@ -9,7 +9,9 @@ destination: _site
 exclude: ['Gemfile','Gemfile.lock','Rakefile','.git']
 
 # Conversion
-highlighter: pygments
+markdown: redcarpet
+redcarpet:
+    extensions: ["smart", "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "underline", "highlight", "quote", "footnote_ref"]
 excerpt_separator: <!--more-->
 
 # Outputting
