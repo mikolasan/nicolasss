@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     font-weight: normal;
     line-height: 0.8em;
-    margin: 0.4em 0;
+    margin: 0.8em 0 0.4em 0;
     a {
         color: inherit;
     }
@@ -101,6 +101,7 @@ header nav ul {
 }
 
 header .logo {
+    margin-top: 5px;
     font-style: italic;
 }
 
@@ -203,8 +204,20 @@ header .avatar {
   display: none;
 }
 
+blockquote {
+    color: $grey;
+    padding-left: 20px;
+    font-size: 1em;
+    letter-spacing: -1px;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
 footer {
     margin-top: 30px;
+    font-size: 0.9em;
 }
 
 footer ul {
@@ -240,7 +253,7 @@ ul {
 }
 
 .post {
-    margin-bottom: 5em;
+    margin-bottom: 1.5em;
 }
 
 .post-preview {
@@ -322,13 +335,13 @@ span.post-date {
 }
 
 .pagination a.previous span:before {
-    content: "←";
+    content: "<";
     position: absolute;
     left: -30px;
 }
 
 .pagination a.next span:after {
-    content: "→";
+    content: ">";
     position: absolute;
     left: 50px;
 }
