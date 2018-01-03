@@ -7,11 +7,11 @@ h1.hero {
 }
 
 .project {
-    @include span-columns(6);
+    @include grid-column(6);
 }
 
 .pagination a {
-    @include span-columns(3);
+    @include grid-column(3);
 }
 
 .project h2 {
