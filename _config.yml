@@ -1,5 +1,5 @@
-title: Nicolas Neupokoev
-url: "http://nicolas.zz.mu"
+title: Nicolay Neupokoev
+url: "http://mikolasan.github.io"
 twitter_username: stakanmartini
 github_username:  mikolasan
 #source: _source
@@ -16,6 +16,6 @@ excerpt_separator: <!--more-->
 
 # Outputting
 permalink: /:categories/:title
-paginate: 4
+#paginate: 4
 
 
