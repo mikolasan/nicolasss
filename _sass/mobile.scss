@@ -80,7 +80,9 @@ p {
 }
 
 .container {
-    @include outer-container;
+    @include grid-container;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 780px;
     position: relative;
 }
@@ -241,17 +243,6 @@ footer nav {
     padding-top: 20px;
 }
 
-footer nav ul li {
-    @include span-columns(3);
-    @include media(max-width 40em) {
-        @include span-columns(12);
-        margin-bottom: 10px;
-        &:nth-child(2n) {
-          @include omega;
-        }
-    }
-}
-
 ul, ol {
     line-height: 1.5em;
     padding-left: 20px;
@@ -293,7 +284,7 @@ span.post-date {
     display: block;
     border: 1px solid $lightGrey;
     margin-bottom: 2.35765%;
-    @include pad;
+    padding: 0;
     color: inherit;
     &:hover {
         border-color: $indigo;
@@ -303,10 +294,6 @@ span.post-date {
 
 .project h2 {
   font-size: 3em;
-}
-
-.project:nth-child(2n) {
-    @include omega;
 }
 
 .pagination {
@@ -334,10 +321,6 @@ span.post-date {
 
 .key-selector a.active {
     background-color: $blue;
-}
-
-.button:hover, .button:active {
-    @include box-shadow(0 0 1px 2px rgba(0,0,0,1) inset);
 }
 
 .pagination .button span {
