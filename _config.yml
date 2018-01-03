@@ -11,4 +11,5 @@ excerpt_separator: <!--more-->
 
 # Outputting
 permalink: /:categories/:title
+plugins: ["jekyll-paginate"]
 paginate: 4
