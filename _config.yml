@@ -1,4 +1,14 @@
-pygments: true
-permalink: /post/:title
+destination: _site
+
+# Handling Reading
 exclude: ['Gemfile','Gemfile.lock','Rakefile','.git']
+
+# Conversion
+markdown: redcarpet
+redcarpet:
+    extensions: ["smart", "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "underline", "highlight", "quote", "footnote_ref"]
+excerpt_separator: <!--more-->
+
+# Outputting
+permalink: /:categories/:title
 paginate: 4
