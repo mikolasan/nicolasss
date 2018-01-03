@@ -5,3 +5,5 @@
 _site/
 _cache/*
 css/
+_sass/bourbon/
+_sass/neat/
