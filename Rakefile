@@ -14,7 +14,7 @@ task :generate do
   puts "Generating site with Jekyll..."
   exec(<<-CMD)
     set -e
-    jekyll --no-auto --pygments;
+    jekyll serve;
     sass --update _sass:_site/css -f -r ./_sass/bourbon/lib/bourbon.rb;
     git checkout gh-pages;
     cp -r _site/* .;
@@ -33,7 +33,7 @@ desc "Watch the site and regenerate when it changes"
 task :watch do
   puts "Starting to watch source with Jekyll and Sass..."
   system "sass --update _sass:css -f -l -r ./_sass/bourbon/lib/bourbon.rb"
-  jekyllPid = Process.spawn("jekyll --auto --server")
+  jekyllPid = Process.spawn("jekyll serve --watch")
   sassPid = Process.spawn("sass --watch _sass:css -l -r ./_sass/bourbon/lib/bourbon.rb")
 
   trap("INT") {
@@ -60,9 +60,9 @@ task :post do
   slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
-  rescue Exception => e
+  rescue
     puts "Error - date format must be YYYY-MM-DD, please check you typed it correctly!"
-    exit -1
+    exit (-1)	
   end
   filename = File.join(CONFIG['posts'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
   if File.exist?(filename)
